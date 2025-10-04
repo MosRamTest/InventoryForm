@@ -20,14 +20,19 @@ public class Login {
     @FindBy(id = "login-submit")
     WebElement LoginSubmit_id;
 
+    @FindBy (id = "login-submit")
+    WebElement LoginButton_id;
+
     public Login(WebDriver driver) {
         this.driver = driver;
     }
 
-    public  void clickLogin(){
-        //LoginHeader_id.isDisplayed();
-        LoginEmail_id.sendKeys("mos@gmail.com");
-       /* LoginPassword_id.sendKeys("");
-        LoginSubmit_id.click();*/
+    public  void EnterLoginDetails( String email, String password){
+        LoginEmail_id.sendKeys(email);
+        LoginPassword_id.sendKeys(password);
+
+    }
+    public void clickLoginSubmit(){
+        LoginSubmit_id.click();
     }
 }
